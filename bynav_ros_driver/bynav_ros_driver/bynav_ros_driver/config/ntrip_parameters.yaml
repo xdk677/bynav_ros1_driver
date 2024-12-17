@@ -1,0 +1,8 @@
+NTRIP: {
+  enable: '0', # 0 关闭, 1 开启
+  ip: '',
+  port: '',
+  username: '',
+  password: '',
+  mountpoint: 'AUTO'
+}
