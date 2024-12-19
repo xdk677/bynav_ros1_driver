@@ -41,6 +41,12 @@
             ALIGN  Handler. 
         </description>
     </class>
+
+    <class name="RANGECMPHandler" type="bynav_ros_driver::RANGECMPHandler" base_class_type="bynav_ros_driver::Oem7MessageHandlerIf">
+        <description>
+            RANGECMP  Handler. 
+        </description>
+    </class>
     
     <class name="TimeHandler" type="bynav_ros_driver::TimeHandler" base_class_type="bynav_ros_driver::Oem7MessageHandlerIf">
         <description>

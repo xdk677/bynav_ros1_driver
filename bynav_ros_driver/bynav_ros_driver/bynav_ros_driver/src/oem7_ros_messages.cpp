@@ -50,6 +50,7 @@
 #include "novatel_oem7_msgs/RXSTATUS.h"
 #include "novatel_oem7_msgs/TIME.h"
 #include "novatel_oem7_msgs/BYINS2.h"
+#include "novatel_oem7_msgs/RANGECMP.h"
 
 #include "Eigen/Eigen"
 
@@ -777,6 +778,32 @@ void MakeROSMessage(const Oem7RawMessageIf::ConstPtr& msg,
   SetOem7Header(msg, name, byins2->nov_header);
 }
 
+template <>
+void MakeROSMessage(const Oem7RawMessageIf::ConstPtr& msg,
+                    boost::shared_ptr<novatel_oem7_msgs::RANGECMP>& rangecmp) {
+  assert(msg->getMessageId() == RANGECMP_OEM7_MSGID);
+  const uint8_t *rangecmp_data = msg->getMessageData(OEM7_BINARY_MSG_HDR_LEN);
+  rangecmp.reset(new novatel_oem7_msgs::RANGECMP);
+
+  uint32_t obs_num = *reinterpret_cast<const uint32_t*>(rangecmp_data);
+  rangecmp->obs_num = obs_num;
+  rangecmp->range_records.resize(obs_num);
+  for (size_t idx = 0; idx < obs_num; ++idx) {
+    const uint8_t* mem = reinterpret_cast<const uint8_t*>(rangecmp_data) +
+                    sizeof(uint32_t) +
+                    sizeof(RANGECMP_RecordMem) * idx;
+
+    const RANGECMP_RecordMem* record_mem = reinterpret_cast<const RANGECMP_RecordMem*>(mem);
+    std::copy(
+      record_mem->record,
+      record_mem->record + arr_size(record_mem->record),
+      rangecmp->range_records[idx].record.begin());
+  }
+
+  static const std::string name = "RANGECMP";
+  SetOem7Header(msg, name, rangecmp->nov_header);
+}
+
 template
 void
 MakeROSMessage(const Oem7RawMessageIf::ConstPtr&, boost::shared_ptr<novatel_oem7_msgs::BESTGNSSPOS>&);
@@ -841,6 +868,10 @@ MakeROSMessage(const Oem7RawMessageIf::ConstPtr&,  boost::shared_ptr<novatel_oem
 template
 void
 MakeROSMessage(const Oem7RawMessageIf::ConstPtr&, boost::shared_ptr<novatel_oem7_msgs::BYINS2>&);
+
+template
+void
+MakeROSMessage(const Oem7RawMessageIf::ConstPtr&, boost::shared_ptr<novatel_oem7_msgs::RANGECMP>&);
 
 //---------------------------------------------------------------------------------------------------------------
 /***

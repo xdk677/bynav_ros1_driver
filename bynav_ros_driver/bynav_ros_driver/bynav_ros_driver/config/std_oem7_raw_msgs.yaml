@@ -19,3 +19,4 @@ oem7_raw_msgs:
 - RXSTATUS
 - INSCONFIG                                  
 - BYINS2
+- RANGECMP

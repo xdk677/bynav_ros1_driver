@@ -29,4 +29,5 @@ oem7_msgs:
    PSRDOP2:                    1163
    BESTGNSSPOS:                1429
    BYINS2:                     42274
+   RANGECMP:                   140
    # More messages may be added in order to process Oem7 'raw' messages.

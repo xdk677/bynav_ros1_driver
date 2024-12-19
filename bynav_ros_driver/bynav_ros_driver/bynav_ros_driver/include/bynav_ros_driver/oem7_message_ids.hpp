@@ -52,6 +52,7 @@ namespace bynav_ros_driver
   const int TIME_OEM7_MSGID               =  101;
   const int RAWIMUSX_OEM7_MSGID           =  1462;
   const int BYINS2_OEM7_MSGID             = 42274;
+  const int RANGECMP_OEM7_MSGID           = 140; 
 
   // NMEA0183
   const int GLMLA_OEM7_MSGID              =   859;

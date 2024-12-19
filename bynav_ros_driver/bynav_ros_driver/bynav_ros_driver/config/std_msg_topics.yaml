@@ -24,3 +24,4 @@ INSCONFIG:  {topic: /bynav/insconfig,             frame_id: gps,  queue_size: "1
 RXSTATUS:   {topic: /bynav/rxstatus,              frame_id: gps,  queue_size: "10"}
 TIME:       {topic: /bynav/time,                  frame_id: gps} 
 BYINS2:     {topic: /bynav/byins2,                frame_id: gps,  queue_size: "10"}
+RANGECMP:   {topic: /bynav/rangecmp,              frame_id: gps,  queue_size: "10"}

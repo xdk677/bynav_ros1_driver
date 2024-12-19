@@ -33,6 +33,7 @@ receiver_init_commands:
 # - "LOG INSSTDEVB ONTIME 1"
 # - "LOG BESTGNSSPOSB ONTIME 0.1"
 # - "LOG RAWIMUSXB ONNEW"
+# - "LOG RANGECMPB ONTIME 1"
 
 #----------------------------------------------------------------------------------------------------------
 

@@ -61,6 +61,8 @@ add_message_files(DIRECTORY msg FILES
   BYINS2.msg
   GNSSSolutionStatus.msg
   INSPVAXExtendedParams.msg
+  RANGECMP.msg
+  RangeRecord.msg
 )
 generate_messages(DEPENDENCIES ${MSG_DEPS})
 catkin_package(

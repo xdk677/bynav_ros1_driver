@@ -587,10 +587,15 @@ namespace bynav_ros_driver
   };
   static_assert(sizeof(BYINS2Mem) == 303, ASSERT_MSG);
 
+  struct __attribute__((packed))
+  RANGECMP_RecordMem
+  {
+    oem7_hex_t       record[24];
+  };
+  static_assert(sizeof(RANGECMP_RecordMem) == 24, ASSERT_MSG);
+
   const std::size_t OEM7_BINARY_MSG_HDR_LEN       = sizeof(Oem7MessageHeaderMem);
   const std::size_t OEM7_BINARY_MSG_SHORT_HDR_LEN = sizeof(Oem7MessgeShortHeaderMem);
-
-
 
 }
 #endif
