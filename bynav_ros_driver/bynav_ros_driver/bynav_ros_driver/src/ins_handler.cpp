@@ -342,7 +342,7 @@ namespace bynav_ros_driver
      */
     inline double computeAngularVelocityFromRaw(double raw_gyro)
     {
-      return raw_gyro * imu_raw_gyro_scale_factor_ * imu_rate_ * M_PI / 180.0;
+      return raw_gyro * imu_raw_gyro_scale_factor_ * M_PI / 180.0;
     }
 
     /**
@@ -350,7 +350,7 @@ namespace bynav_ros_driver
      */
     inline double computeLinearAccelerationFromRaw(double raw_acc)
     {
-      return raw_acc * imu_raw_accel_scale_factor_ * imu_rate_;
+      return raw_acc * imu_raw_accel_scale_factor_ ;
     }
 
 
