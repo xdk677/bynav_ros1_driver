@@ -5,9 +5,9 @@
 	<arg name="oem7_ip_addr"   default="127.0.0.1"       /> <!--  E.g. "127.0.0.1"  -->
 	<arg name="oem7_port"      default="8888"            />
 
-	<!-- 数据保存文件路径, 为空时不保存 -->
+	<!-- Data save file path; leave empty if you don't want to save data -->
 	<arg name="oem7_receiver_log" default="" />
-	<!-- 数据文件的最大大小， 超过该值时切换新文件保存, 单位为 MB, 设置为 0 则一直存放到一个文件中 -->
+	<!-- The maximum size of the data file. When the file size exceeds this value, a new file will be used for storage. The unit is MB. If set to 0, the data will be continuously stored in one file. -->
 	<arg name="max_log_size" default="100" />
 
 	<param name="/bynav/oem7/receivers/main/oem7_if"        value="$(arg oem7_if)"      type="string" />

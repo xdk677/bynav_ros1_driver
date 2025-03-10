@@ -1,5 +1,5 @@
 NTRIP: {
-  enable: '0', # 0 关闭, 1 开启
+  enable: '0', # 0: Disable, 1: Enable
   ip: '',
   port: '',
   username: '',

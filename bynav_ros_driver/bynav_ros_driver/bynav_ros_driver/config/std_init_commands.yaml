@@ -9,7 +9,7 @@ receiver_init_commands:
 #-------------------------------------------------------------------------------------------------------
 # Standard Logging Requests
 
-# 在这里指定需要获取的数据，下面都已经注释掉了，可以按需要取消注释或者增加新的指令
+# Specify the data to be acquired here. All the following commands are commented out. You can uncomment them as needed or add new commands.
 #----------------------------
 # Status & Config
 # - "LOG INSCONFIGB ONCE"  # Log once to obtain initial configuration. Do not remove, needed for IMU messages.
@@ -47,10 +47,3 @@ receiver_init_commands:
 # - "LOG GALFNAVEPHEMERISB ONNEW"
 # - "LOG GALINAVEPHEMERISB ONNEW"
 # - "LOG RANGEB ONTIME 1"
-
-
-
-
-
-
-
